@@ -10,7 +10,6 @@ router.get('/', async (req, res) => {
 
   if (req.query.search) {
     const querySearch = '%' + req.query.search + '%'
-    
     where[Op.or] = [{ title: { [Op.iLike]: querySearch } }, { author: { [Op.iLike]: querySearch } }]
   }
 
@@ -46,7 +45,7 @@ router.post('/', tokenExtractor, async (req, res) => {
   return res.json(blog)
 })
 
-const blogFinder = async (req, res, next) => {
+const blogFinder = async (req, _res, next) => {
   req.blog = await Blog.findByPk(req.params.id)
   next()
 }
