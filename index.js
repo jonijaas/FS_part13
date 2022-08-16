@@ -18,9 +18,15 @@ app.use('/api/login', loginRouter)
 app.use('/api/authors', authorsRouter)
 
 //Errors responds with JSON formatted error message besides express-async-errors middleware
-app.use((err, req, res, next) => {
+app.use((err, _req, res, next) => {
   if (err) {
-    res.json({ error: err.message })
+    if (err.message === 'Validation error: Validation min on year failed') {
+      res.status(400).json({ error: 'Year must be at least equal to 1991!' })
+    } else if (err.message === 'Validation error: Validation max on year failed') {
+      res.status(400).json({ error: 'Year can not be greater than the current year!' })
+    } else {
+      res.status(400).json({ error: err.message })
+    }
   }
 
   next(err)
