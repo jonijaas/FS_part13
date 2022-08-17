@@ -3,8 +3,8 @@ const router = require('express').Router()
 const { Session } = require('../models')
 const { tokenExtractor } = require('../util/middleware')
 
-// Logout working on route POST /api/logout
-router.post('/', tokenExtractor, async (req, res) => {
+// Logout working on route PUT /api/logout
+router.put('/', tokenExtractor, async (req, res) => {
   const currentSession = await Session.findOne({
     where: {
       token: req.token
