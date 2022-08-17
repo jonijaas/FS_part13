@@ -23,4 +23,6 @@ Run the application in development mode with `npm run dev`
 
 Run the application with `npm start`
 
+Undo previous migration with rollback command `npm run migration:down`
+
 Database address needed, for example in .env file with DATABASE_URL variable or in util/config.js file.
