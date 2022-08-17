@@ -5,13 +5,13 @@ https://fullstackopen.com/en/part13
 
 ## Exercises
 
-FS_part13 -repository: 13.1-13.24
-commands.sql : 13.2
-cli.js : 13.3
+FS_part13 -repository: 13.1-13.24  
+commands.sql : 13.2  
+cli.js : 13.3  
 
 ## App
 
-This is backend for blog application similar to the one developsed in Full Stack Open Part 4 exercises and should be mostly compatible with the frontend developed in Full Stack Open Part 5 exercises. 
+This is backend for blog application similar to the one developed in Full Stack Open Part 4 exercises and should be mostly compatible with the frontend developed in Full Stack Open Part 5 exercises. 
 
 This backend is using Postgres database through Sequelize ORM library, database is located in Heroku servers.
 
